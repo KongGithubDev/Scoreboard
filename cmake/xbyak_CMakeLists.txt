@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(xbyak)
+add_library(xbyak INTERFACE)
+target_include_directories(xbyak INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+if(NOT TARGET xbyak::xbyak)
+    add_library(xbyak::xbyak ALIAS xbyak)
+endif()
